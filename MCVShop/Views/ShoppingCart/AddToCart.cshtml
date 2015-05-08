@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MCVShop.Models.Product>
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+<h2>ViewCart</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pret)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pret)
+            </td>
+
+            <td>
+                @Html.ActionLink("Remove from cart", "../ShoppingCart/RemoveFromCart", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

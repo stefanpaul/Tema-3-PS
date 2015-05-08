@@ -1,0 +1,25 @@
+﻿@model MCVShop.Models.Admin
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Login failed");
+     <div>
+        <fieldset>
+            <legend>Login Form</legend>
+
+            <div> @Html.LabelFor(u=>u.loginName)</div>
+
+            <div> @Html.TextBoxFor(u=> u.loginName)</div>
+
+            <div> @Html.LabelFor(u => u.Parola)</div>
+
+            <div> @Html.PasswordFor(u => u.Parola)</div>
+
+            <input type="submit" value=" Log in" />
+
+        </fieldset>
+     </div>
+}
